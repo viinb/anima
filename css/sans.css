@@ -1,0 +1,29 @@
+* {
+    margin: 0%;
+    padding: 0%;
+}
+
+body {
+    background-image: url('/img/sans/poopshitter.png');
+    background-size: cover;
+}
+
+#sansQuote {
+    display: flex;
+}
+
+p.ascii {
+    font-size: 8px;
+    white-space: pre-line;
+}
+
+p.sansQuote {
+    padding-left: 32px;
+}
+
+p.comicsans {
+    color: white;
+    font-size: 16px;
+    font-family: 'Comic Sans MS';
+    white-space: pre-line;
+}
