@@ -1,9 +1,10 @@
 body {
+    background-image: url('/img/fundo.jpg');
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: linear-gradient(to bottom right, #f0f9f0, #d0f0d0);
     margin: 0;
     padding: 0;
     font-family: sans-serif;
@@ -18,11 +19,14 @@ body {
 .logo-wrapper {
     background-color: rgb(255, 255, 255);
     padding: 70px;
+    overflow: hidden;
     border-radius: 50px;
     box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
     position: relative;
-    animation: subirBounce 20s ease forwards, sumir 1s ease forwards;
-    animation-delay: 0s, 20s;
+    animation: subirBounce 20s ease forwards, palavras 1s ease forwards, sumir 1s ease forwards;
+    animation-delay: 0s, 14s, 20s;
+    display: flex;
+    flex-direction: row-reverse;
 }
 
 @keyframes subirBounce {
@@ -34,6 +38,14 @@ body {
     }
     100% {
         transform: translateY(0);
+    }
+}
+@keyframes palavras {
+    0% {
+
+    }
+    100% {
+        transform: scale(1);
     }
 }
 
@@ -121,16 +133,15 @@ body {
 
 @keyframes quicarBola {
     0% {
-        transform: translateY(50vh) scale(0.5);
-        transform: translateX(50vh) scale(0.5);
+        transform: translateY(-20vh) scale(0.5);
         opacity: 0;
     }
     60% {
-        transform: translateY(-20px) scale(1.1);
+        transform: translateY(-15px) scale(1.1);
         opacity: 1;
     }
     80% {
-        transform: translateY(10px) scale(0.95);
+        transform: translateY(5px) scale(0.95);
     }
     100% {
         transform: translateY(0) scale(1);
@@ -214,7 +225,7 @@ img {
 .tiro {
     position: absolute;
     width: 4px;
-    height: 20px;
+    height: 17px;
     background-color: rgb(206, 160, 10);
     top: 100vh;
     left: 50%;
