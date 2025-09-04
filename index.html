@@ -1,49 +1,74 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Logo IF Animada</title>
-        <link rel="stylesheet" href="css/style.css" />
-        <link rel="shortcut icon" href="img/sans/icone.png" type="image/x-icon">
-    </head>
-    <body>
-        <img src="https://media.tenor.com/_nOrfeT0oJkAAAAi/baldi-yap.gif" alt>
-        <div class="logo-wrapper">
-            <p class="texto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo IF Animada Épica</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/sans/icone.png" type="image/x-icon">
+</head>
+<body>
+    <!-- GIF decorativo -->
+    <img src="https://media.tenor.com/_nOrfeT0oJkAAAAi/baldi-yap.gif" alt="GIF decorativo" class="decorative-gif">
+
+    <!-- Cortina inicial -->
+    <div class="cortinas">
+        <img src="img/31ca6ebf800934f3667922bcba750936-ezgif.com-gif-maker (1).gif" alt="Cortina animada" id="cortina-animada">
+    </div>
+
+    <!-- Explosão final -->
+    <div class="explosao-container">
+        <img src="img/explosaotop.gif" alt="Explosão" class="explosao">
+    </div>
+
+    <!-- Mira e tiro -->
+    <div class="mira"></div>
+    <div class="mira-horizontal"></div>
+    <div class="tiro"></div>
+
+    <!-- Logo principal + Texto -->
+    <div class="logo-wrapper" id="logo-wrapper">
+        <div class="texto-animado" id="texto-animado">
+            <h1>Instituto Federal</h1>
+            <p>Educação, Ciência e Tecnologia</p>
+        </div>
+
         <div class="logo">
-            <!-- Primeira linha -->
             <div class="circle red"></div>
             <div class="square delay-1"></div>
             <div class="square delay-2"></div>
-
-            <!-- Segunda linha -->
             <div class="square delay-3"></div>
             <div class="square delay-4"></div>
             <div class="empty"></div>
-
-            <!-- Terceira linha -->
             <div class="square delay-5"></div>
             <div class="square delay-6"></div>
             <div class="square delay-7"></div>
-
-            <!-- Quarta linha -->
             <div class="square delay-8"></div>
             <div class="square delay-9"></div>
             <div class="empty"></div>
         </div>
-        </div>
-        <div class="cortinas">
-            <img src="img/31ca6ebf800934f3667922bcba750936-ezgif.com-gif-maker (1).gif" alt="" loop=0 id="lap" >
-            <script>
-                setTimeout(() => {
-                  document.getElementById("lap").style.display = "none";
-                }, 5100);
-              </script>
     </div>
-    <div><img src="img/explosaotop.gif" alt="" class="explosao"></div>
-    <div class="mira demora"> </div>
-    <div class="miral demora"></div>
-    <div class="tiro" id="tiro"></div>
-    </body>
+
+    <script>
+        // Esconde cortina após 5,1s
+        setTimeout(() => { document.getElementById("cortina-animada").style.display = "none"; }, 5100);
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const texto = document.getElementById("texto-animado");
+            const ultimoBloco = document.querySelector(".delay-9");
+            const logoWrapper = document.getElementById("logo-wrapper");
+
+            // Ativa aba e texto após animação da logo
+            ultimoBloco.addEventListener("animationend", () => {
+                texto.classList.add("ativo");
+            });
+
+            // Explosão da logo + sumir texto
+            setTimeout(() => {
+                logoWrapper.classList.add("explodir");
+                texto.classList.add("sumir");
+            }, 19500);
+        });
+    </script>
+</body>
 </html>
